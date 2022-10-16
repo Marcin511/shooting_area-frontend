@@ -1,0 +1,17 @@
+.table{
+    background-color: aliceblue;
+}
+
+.guns-picture{
+    background-image:url("../assets/guns.jpeg") ;
+    width: 1280px;
+    height: 720px;
+}
+.navbar{
+    background-color: gray;
+}
+.background-movie{
+    background-clip: url("../assets/guns.mp4");
+    width: 1280px;
+    height: 720px;
+}
