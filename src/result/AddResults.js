@@ -22,7 +22,7 @@ export default function AddResults() {
     const onSubmit =async (e) => {
         e.preventDefault();
         await axios.post("http://localhost:8086/score",result)
-        navigate("/")
+        navigate("/view/{User_id}")
     };
   return (
     <div className="container">

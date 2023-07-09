@@ -3,13 +3,20 @@ import React, { useEffect,useState } from 'react'
 import { Link ,useParams} from 'react-router-dom'
 
 export default function ViewUser() {
-    const [user,setUser] = useState(
+    const [user,results,setUser,setResults] = useState(
         {
             name:"",
             email:"",
-            password:""
         }
     );
+    const {Id} = useParams()
+    useEffect(()=>{
+      loadResult();
+  },[]);
+    const loadResult = async () => {
+        const result = await axios.get(`http://localhost:8086/result/${Id}`)
+        setResults(result.data);
+    };
     const {id} = useParams();
     useEffect(()=>{ 
         loadUser();
@@ -41,11 +48,7 @@ export default function ViewUser() {
                             {user.email}
                             
                         </li>
-                        <li className="list-group-item">
-                            <b>Password: </b>
-                            {user.password}
-                            
-                        </li>
+                
                     </ul>
                 </div>
                 
@@ -53,7 +56,7 @@ export default function ViewUser() {
         
             <Link className="btn btn-primary my-2" to={"/score"}>add result</Link>
             <Link className="btn btn-outline-primary" to={"/"}>Back</Link>
-            <Link className="btn btn-primary my-2" to={`/result/${id}/results`}>show result</Link>
+            <Link className="btn btn-primary my-2" to={`/result/${id}`}>show result</Link>
             <Link className="btn btn-primary my-2" to={"/showall"}>AllResults</Link>
             </div>
             </div>

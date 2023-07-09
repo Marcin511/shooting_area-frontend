@@ -6,7 +6,7 @@ import "../css/style.css"
 export default function ViewResults() {
     
     const [results, setResults] = useState(
-      {
+      { 
         numberOfShots:"",
         maxScore:"",
         userScore:"",
@@ -16,12 +16,12 @@ export default function ViewResults() {
     );
    
     
-    const {id} = useParams()
+    const {userId} = useParams()
     useEffect(()=>{
       loadResult();
   },[]);
     const loadResult = async () => {
-        const result = await axios.get(`http://localhost:8086/result/${id}/results`)
+        const result = await axios.get(`http://localhost:8086/result/${userId}`)
         setResults(result.data);
     };
 
@@ -53,7 +53,7 @@ export default function ViewResults() {
               ))}
              </tbody>
             </table> 
-            <Link className="btn btn-primary mx-2" to="/">Back</Link>
+            <Link className="btn btn-primary mx-2" to="/view{userId}">Back</Link>
         </div>
       </div>
     </div>

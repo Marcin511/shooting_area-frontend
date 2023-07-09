@@ -23,9 +23,9 @@ function App() {
         <Route exact path="/login" element = {<Login/>}/>
         <Route exact path="/showall" element = {<AllResults/>}/>
         <Route exact path="/" element = {<Home/>}/>
-        <Route exact path="/result/:id/results" element = {<Score/>}/>
+        <Route exact path="/result/:Id" element = {<Score/>}/>
         <Route exact path="/register" element={<AddUser/>}/>
-        <Route exact path="/edituser/:id" element = {<EditUser/>}/>
+        <Route exact path="/edituser/:Id" element = {<EditUser/>}/>
         <Route exact path="/view/:id" element={<ViewUser />} />
         <Route exact path="/score" element={<AddResults/>}/>
       </Routes>

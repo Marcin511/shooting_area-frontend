@@ -60,8 +60,7 @@ export default function AddUser() {
                     value={password}
                     onChange={(e)=>onInputChange(e)}/> 
                 </div>
-                
-                <button type ="submit" className="btn btn-outline-primary">Submit</button>
+                <button type ="submit" className="btn btn-outline-primary mx-2">Submit</button>
                 <Link className="btn btn-outline-danger mx-2" to="/">Cancel</Link>
                 </form>
             </div>

@@ -15,7 +15,7 @@ export default function Login() {
     const onSubmit =async (e) => {
         e.preventDefault();
         await axios.post("http://localhost:8086/login",user)
-        navigate("/home")
+        navigate("/")
     };
   return (
     <div className='guns-picture'>
@@ -49,7 +49,7 @@ export default function Login() {
                     onChange={(e)=>onInputChange(e)}/> 
                 </div>
                 
-                <Link className="btn btn-outline-primary"to="/">Login</Link>
+                <Link className="btn btn-outline-primary"to={`/view/{id}`}>Login</Link>
                 <Link className="btn btn-outline-danger mx-2" to="/">Cancel</Link>
                 </form>
             </div>

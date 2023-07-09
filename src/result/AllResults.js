@@ -44,7 +44,7 @@ export default function AllResults() {
               ))}
              </tbody>
             </table> 
-            <Link className="btn btn-primary mx-2" to="/">Back</Link>
+            <Link className="btn btn-primary mx-2" to="/view/{User_id}">Back</Link>
         </div>
       </div>
     </div>
